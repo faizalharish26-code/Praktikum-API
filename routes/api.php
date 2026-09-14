@@ -4,66 +4,78 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Blog;
 
-// B - BROWSE (Get All)
+// // fungsi untuk mendapatkan user, but need authentikasi
+// Route::get('/user', function (Request $request) {
+//     return $request->user();
+// })->middleware('auth:api');
+
+// BREAD
+// B = BROWSE (menampilkan list data)
+// R = READ (menampilkan detail data)
+// E = EDIT (mengubah data)
+// A = ADD (menambahkan data)
+// D = DELETE (menghapus data)
+
+
+// blogs : untuk menampikan semua data blogs (GET)
+// B (Browse): MENAMPILKAN LISTS DARIPADA BLOG YANG ADA DI DATABASE
 Route::get('/blogs', function() {
+    $blogs = Blog::get();
+
     return response()->json([
-        'status' => 'success',
-        'data'   => Blog::all()
-    ], 200);
+        'data' => $blogs
+    ]);
 });
 
-// R - READ (Get Detail)
-Route::get('/blogs/{id}', function($id) {
+// blog/{id} : untuk menampilkan data blog berdasarkan id (GET)
+// R (Read): MENAMPILKAN DETAIL DATA BLOG BERDASARKAN ID
+Route::get('/blog/{id}', function($id) {
     $blog = Blog::findOrFail($id);
 
     return response()->json([
-        'status'  => 'success',
-        'message' => 'Detail blog ditemukan',
-        'data'    => $blog
-    ], 200);
+        'message' => "Detail blog berhasil ditampilkan",
+        'data' => $blog
+    ]);
 });
 
-// A - ADD (Create Data)
-Route::post('/blogs', function(Request $request) {
-    $validated = $request->validate([
-        'title'   => 'required|string|max:255',
-        'content' => 'required|string',
+// blog/{id} : untuk mengupdate data blog berdasarkan id (PUT)
+// E (Edit): MENGUBAH DATA BLOG BERDASARKAN ID
+Route::put('/blog/{id}', function($id) {
+    $blog = Blog::findOrFail($id);
+
+    $blog->update([
+        'title' => request()->get('title'),
+        'content' => request()->get('content'),
     ]);
 
-    $blog = Blog::create($validated);
-
     return response()->json([
-        'status'  => 'success',
-        'message' => 'Blog berhasil dibuat',
-        'data'    => $blog
-    ], 201);
+        'message' => "Blog berhasil diubah",
+    ]);
 });
 
-// E - EDIT (Update Data)
-Route::put('/blogs/{id}', function(Request $request, $id) {
-    $blog = Blog::findOrFail($id);
 
-    $validated = $request->validate([
-        'title'   => 'sometimes|required|string|max:255',
-        'content' => 'sometimes|required|string',
+// blogs : untuk menambahkan data blog baru (POST)
+// A (Add): MENAMBAHKAN DATA BLOG BARU KE DALAM DATABASE
+Route::post('/blogs', function() {
+    $blog = Blog::create([
+        'title' => request()->get('title'),
+        'content' => request()->get('content'),
     ]);
 
-    $blog->update($validated);
-
     return response()->json([
-        'status'  => 'success',
-        'message' => 'Blog berhasil diperbarui',
-        'data'    => $blog
-    ], 200);
+        'message' => "Blog berhasil ditambahkan",
+        'data' => $blog
+    ]);
 });
 
-// D - DELETE (Remove Data)
-Route::delete('/blogs/{id}', function($id) {
+// blog/{id} : untuk menghapus data blog berdasarkan id (DELETE)
+// D (Delete): MENGHAPUS DATA BLOG BERDASARKAN ID
+Route::delete('/blog/{id}', function($id) {
     $blog = Blog::findOrFail($id);
+
     $blog->delete();
 
     return response()->json([
-        'status'  => 'success',
-        'message' => 'Blog berhasil dihapus'
-    ], 200);
+        'message' => "Blog berhasil dihapus",
+    ]);
 });
