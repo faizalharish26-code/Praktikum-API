@@ -11,6 +11,10 @@
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.17",
+<<<<<<< HEAD
+=======
+        "laravel/passport": "^13.0",
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
         "laravel/tinker": "^3.0"
     },
     "require-dev": {
@@ -21,8 +25,13 @@
         "laravel/pint": "^1.27",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
+<<<<<<< HEAD
         "pestphp/pest": "^5.2",
         "pestphp/pest-plugin-laravel": "^5.0"
+=======
+        "pestphp/pest": "^4.7",
+        "pestphp/pest-plugin-laravel": "^4.1"
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
     },
     "autoload": {
         "psr-4": {
@@ -89,4 +98,8 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182

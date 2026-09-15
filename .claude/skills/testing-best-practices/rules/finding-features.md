@@ -17,9 +17,12 @@ Search for a feature in this table before you write the code by hand.
 | Measure if the suite finds a defect | mutation testing |
 | Find code with no types | type coverage |
 | Reduce the time of a slow suite | parallel, profiling |
+<<<<<<< HEAD
 | Split the suite across CI jobs | sharding, `--update-shards` |
 | Run only the tests that a change affects | Test Impact Analysis, `--tia` |
 | Assert that a value has a known format | validation expectations |
+=======
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
 | Run one test while you debug | filtering, `--bail`, `--dirty` |
 
 ## Built-in Laravel Assertion Methods

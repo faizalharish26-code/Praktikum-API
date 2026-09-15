@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
+<<<<<<< HEAD
+=======
+        api: __DIR__.'/../routes/api.php',
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
@@ -18,4 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
         );
+<<<<<<< HEAD
     })->create();
+=======
+    })->create();
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
