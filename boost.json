@@ -1,19 +1,31 @@
 {
     "agents": [
+<<<<<<< HEAD
+        "claude_code"
+    ],
+    "cloud": true,
+=======
         "claude_code",
         "antigravity",
         "cursor"
     ],
     "cloud": false,
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
     "guidelines": true,
     "mcp": true,
     "nightwatch": false,
     "sail": false,
     "skills": [
         "infer-conventions",
+<<<<<<< HEAD
+        "deploying-to-cloud",
+        "laravel-best-practices",
+        "testing-best-practices",
+=======
         "laravel-best-practices",
         "testing-best-practices",
         "passport-development",
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
         "tailwindcss-development"
     ]
 }

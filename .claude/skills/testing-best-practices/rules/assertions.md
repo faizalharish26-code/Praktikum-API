@@ -34,6 +34,13 @@ Use a named response assertion, such as `assertNotFound()`, rather than `assertS
 
 Keep one `expect()` chain on one subject. Start a new chain when the subject changes, or when the chain is difficult to read.
 
+<<<<<<< HEAD
+## Format Expectations
+
+Use Pest's format expectations rather than regular expressions because they provide clearer failure messages. Pest covers email addresses, URLs, UUIDs, IP addresses, and other common formats, and each expectation supports `not` for the negative case.
+
+=======
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
 ## Assert a Known Value
 
 Write the expected value in the test, or calculate the expected value by a different method. Do not calculate the expected value with the logic of the implementation, because the test then passes when that logic is wrong.

@@ -97,7 +97,11 @@ Controllers should coordinate HTTP input, authorization, validation, an applicat
 ```php
 public function store(StorePostRequest $request, CreatePostAction $create): RedirectResponse
 {
+<<<<<<< HEAD
+    $post = $create->handle($request->validated());
+=======
     $post = $create->execute($request->validated());
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
 
     return redirect()->route('posts.show', $post);
 }

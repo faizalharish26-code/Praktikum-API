@@ -29,9 +29,13 @@ Do not commit plaintext production secrets. Laravel can encrypt an environment f
 Incorrect:
 
 ```bash
+<<<<<<< HEAD
+# A plaintext .env file committed to the repository
+=======
 
 # A plaintext .env file committed to the repository
 
+>>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
 STRIPE_SECRET=sk_live_abc123
 AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI
 ```
