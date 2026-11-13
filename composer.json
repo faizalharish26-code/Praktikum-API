@@ -14,7 +14,11 @@
 <<<<<<< HEAD
 =======
         "laravel/passport": "^13.0",
+<<<<<<< HEAD
 >>>>>>> e6601b8bb99b980021e93ed7f99918698ed90182
+=======
+        "laravel/sanctum": "^4.4",
+>>>>>>> b5abb74 (token abilitis)
         "laravel/tinker": "^3.0"
     },
     "require-dev": {
